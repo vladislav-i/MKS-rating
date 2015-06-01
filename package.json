@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/vladislav-i/MKS-rating/issues"
   },
-  "homepage": "https://github.com/vladislav-i/MKS-rating"
+  "homepage": "https://github.com/vladislav-i/MKS-rating",
+  "dependencies": {
+    "backbone": "^1.2.0",
+    "jquery": "^2.1.4"
+  }
 }
