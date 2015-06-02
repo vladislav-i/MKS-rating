@@ -4,6 +4,7 @@ var data = require('./data/data.js');
 var app = express();
 
 app.use(express.static(__dirname + '/../Client'));
+app.use(express.static(__dirname + '/../node_modules'));
 
 app.get('/data', function(req, res) {
   res.send(data);
