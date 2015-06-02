@@ -2,21 +2,21 @@
 <html>
   <head>
     <!--lib files-->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
-    <script src="../node_modules/backbone/backbone-min.js"></script>
-    
+    <script src="../jquery/dist/jquery.min.js"></script>
+    <script src="../backbone/node_modules/underscore/underscore-min.js"></script>
+    <script src="../backbone/backbone-min.js"></script>
+
     <!--client files-->
     <script src="./javascript/views/appView.js"></script>
     <script src="./javascript/views/companyView.js"></script>
     <script src="./javascript/models/appModel.js"></script>
     <script src="./javascript/models/companyModel.js"></script>
     <script src="./javascript/collections/collection.js"></script>
-  
+
     <!--server files-->
     <script src="../Server/data/data.js"></script>
     <script src="../Server/server.js"></script>
-    
+
   </head>
   <body>
     <script>
@@ -27,10 +27,10 @@
         var appView = new AppView({model: app});
         // put the view onto the screen into div companyInfo
         $('.companyInfo').append(appView.render());
-        
+
       });
     </script>
-    
+
     <div>All Hiring Partners - Interest Survey</div>
     <div class="companyInfo"></div>
   </body>
