@@ -1,6 +1,6 @@
 var AppModel = Backbone.Model.extend({
   initialize: function() {
-    this.set('currentCompany', new companyModel({name: 'MKS'})); // Current Company being displayed
+    this.set('currentCompany', new companyModel()); // Current Company being displayed
   },
   next: function(){
     // Triggering an event here will also trigger the event on the collection
