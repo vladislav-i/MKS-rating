@@ -3,6 +3,6 @@ var companyView = Backbone.View.extend({
     this.render();
   },
   render: function(){
-    this.$el.html('<div>' + this.model.get('name') + '</div>');
+    this.$el.html('<div>' + this.model.get('company').toString() + '</div>');
   }
 });

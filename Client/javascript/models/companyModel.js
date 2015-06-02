@@ -1,5 +1,6 @@
 var companyModel = Backbone.Model.extend({
+  url: '/data',
   initialize: function() {
-    this.set('name', 'mks2');
+    this.set('company', this.fetch());
   }
 });
