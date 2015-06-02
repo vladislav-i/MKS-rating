@@ -1,4 +1,4 @@
-var companyData = [
+module.exports = [
   {
     picture: "https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/268/s300/makersquare-logo.png",
     name: "MakerSquare",
