@@ -1,6 +1,8 @@
 var AppView = Backbone.View.extend({
   initialize: function(params){
+    this.listenTo(this.model, 'change', this.render);
     this.companyView = new CompanyView({model: this.model.get('currentCompany')});
+    this.$el.prepend(this.companyView.$el);
     this.render();
   },
 
@@ -14,19 +16,16 @@ var AppView = Backbone.View.extend({
   },
 
   transitionNext: function() {
-    console.log("button-next");
-    this.model.next();
+    this.model.nextCompany();
   },
 
   transitionPrevious: function() {
-    console.log("button-previous");
-    this.model.prev();
+    this.model.prevCompany();
   },
 
   render: function(){
-    this.$el.prepend([
-      'hello',
-      this.companyView.$el
-    ]);
+    this.companyView.$el.remove();
+    this.companyView = new CompanyView({model: this.model.get('currentCompany')});
+    this.$el.prepend(this.companyView.$el);
   }
 });

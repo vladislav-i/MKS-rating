@@ -8,9 +8,9 @@ app.use(express.static(__dirname + '/../Client'));
 app.use(express.static(__dirname + '/../node_modules'));
 app.use(bodyParser.json());
 
-app.get('/data', function(req, res) {
+app.get('/data/*', function(req, res) {
   console.log('GET:', req.path, req.params);
-  res.send(data);
+  res.send(data[req.params[0]]);
 });
 
 var server = app.listen(3000, function() {
