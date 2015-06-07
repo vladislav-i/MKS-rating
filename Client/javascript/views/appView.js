@@ -1,28 +1,31 @@
 var AppView = Backbone.View.extend({
   initialize: function(params){
-    this.companyView = new companyView({model: this.model.get('currentCompany')});
+    this.listenTo(this.model, 'change', this.render);
+    this.companyView = new CompanyView({model: this.model.get('currentCompany')});
+    this.$el.prepend(this.companyView.$el);
+    this.render();
   },
-  
+
+  // Set the element to companyInfo div
+  el: '.companyInfo',
+
+  // Watch for button press events
   events: {
-    "click .button-next": "transitionUp",
-    "click .button-previous": "tranistionPrevious",
+    "click .button-next": "transitionNext",
+    "click .button-previous": "transitionPrevious",
   },
 
   transitionNext: function() {
-    console.log("button-next");
-    this.model.next();
+    this.model.nextCompany();
   },
 
   transitionPrevious: function() {
-    console.log("button-previous");
-    this.model.prev();
+    this.model.prevCompany();
   },
-  
+
   render: function(){
-    return this.$el.html([
-      'hello',
-      this.companyView.$el
-    ]);
-    
+    this.companyView.$el.remove();
+    this.companyView = new CompanyView({model: this.model.get('currentCompany')});
+    this.$el.prepend(this.companyView.$el);
   }
 });

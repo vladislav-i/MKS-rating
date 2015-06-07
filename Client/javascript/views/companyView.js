@@ -1,9 +1,12 @@
-var companyView = Backbone.View.extend({
+var CompanyView = Backbone.View.extend({
   initialize: function(){
-    this.render();
     this.listenTo(this.model, 'change', this.render);
+    this.render();
   },
+
+  template: _.template($('#company-template').html()),
+
   render: function(){
-    this.$el.html('<div>' + this.model.get('name') + ',' + this.model.get('location') + '</div>');
+    this.$el.html(this.template(this.model.attributes));
   }
 });

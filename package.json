@@ -18,6 +18,7 @@
   "homepage": "https://github.com/vladislav-i/MKS-rating",
   "dependencies": {
     "backbone": "^1.2.0",
+    "body-parser": "^1.12.4",
     "express": "^4.12.4",
     "jquery": "^2.1.4"
   }
